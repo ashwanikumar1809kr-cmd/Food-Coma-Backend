@@ -10,7 +10,7 @@ const app = express();
 
 app.use(express.json());
 app.use(express.text());
-app.use(express.urlencoded());
+app.use(express.urlencoded({extended: true }));
 
 //Routing mdilleware
 // if your req route starts with /users then handle it using userRouter
@@ -43,3 +43,6 @@ app.listen(ServerConfig.PORT,async () => {
 
 //34.5.12.8:5500 -> socket  address for other laptop
 //localhost:5500-> socket address fpr own laptop        
+
+//localhost:5500/users -GET
+//local host: 5500/carts/736876235 -GET
